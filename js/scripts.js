@@ -1,6 +1,8 @@
-var buttons = document.getElementsByClassName("button");
+var list = document.getElementById('js-list'),    
+    addItem = document.getElementById('js-addItem');
 
-var countButtons = buttons.length;
-for (var i = 0; i < countButtons; i++) {
-    alert(buttons[i].innerHTML);
-}
+addItem.addEventListener('click', function(e) {
+    var newItem = document.createElement('li');
+    newItem.innerHTML = "item " + list.getElementsByTagName('li').length;
+    list.appendChild(newItem);
+});
